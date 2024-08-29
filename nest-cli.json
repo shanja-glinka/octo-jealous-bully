@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/text-speech/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/text-speech/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/text-speech",
+  "projects": {
+    "text-speech": {
+      "type": "application",
+      "root": "apps/text-speech",
+      "entryFile": "main",
+      "sourceRoot": "apps/text-speech/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/text-speech/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    },
+    "book-service": {
+      "type": "application",
+      "root": "apps/book-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/book-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/book-service/tsconfig.app.json"
+      }
+    },
+    "tts-service": {
+      "type": "application",
+      "root": "apps/tts-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/tts-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tts-service/tsconfig.app.json"
+      }
+    },
+    "file-storage-service": {
+      "type": "application",
+      "root": "apps/file-storage-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/file-storage-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/file-storage-service/tsconfig.app.json"
+      }
+    },
+    "notification-service": {
+      "type": "application",
+      "root": "apps/notification-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification-service/tsconfig.app.json"
+      }
+    },
+    "gateway-service": {
+      "type": "application",
+      "root": "apps/gateway-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway-service/tsconfig.app.json"
+      }
+    }
+  }
+}
