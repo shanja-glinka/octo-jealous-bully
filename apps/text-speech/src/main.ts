@@ -1,14 +1,15 @@
 import { VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
+import { Transport } from '@nestjs/microservices';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import helmet from 'helmet';
-import { AppModule } from './app.module';
 import { AllExceptionsFilter } from './config/all-exceptions.filter';
+import { setupSwagger } from './config/swagger.config';
 import { ValidationPipeConfig } from './config/validation-pipe.config';
+import { AppModule } from './modules/app/app.module';
 import { LoggerService } from './services/logger.service';
-import { Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -26,7 +27,7 @@ async function bootstrap() {
 
   app.use(helmet());
   app.enableCors();
-  // setupSwagger(app);
+  setupSwagger(app);
   app.use(cookieParser());
 
   const port = configService.get<number>('app.port');

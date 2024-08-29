@@ -1,9 +1,10 @@
 import {
+  Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  UpdateDateColumn,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -19,4 +20,13 @@ export class BaseModel {
 
   @DeleteDateColumn()
   deletedAt?: Date;
+
+  @Column({ type: 'uuid', nullable: true })
+  createdBy: string;
+
+  @Column({ type: 'uuid', nullable: true })
+  updatedBy: string;
+
+  @Column({ type: 'uuid', nullable: true })
+  deletedBy: string;
 }

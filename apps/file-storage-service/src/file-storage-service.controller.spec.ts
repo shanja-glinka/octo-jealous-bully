@@ -11,7 +11,9 @@ describe('FileStorageServiceController', () => {
       providers: [FileStorageServiceService],
     }).compile();
 
-    fileStorageServiceController = app.get<FileStorageServiceController>(FileStorageServiceController);
+    fileStorageServiceController = app.get<FileStorageServiceController>(
+      FileStorageServiceController,
+    );
   });
 
   describe('root', () => {

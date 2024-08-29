@@ -4,11 +4,12 @@
   "sourceRoot": "apps/text-speech/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
+    "webpack": false,
     "tsConfigPath": "apps/text-speech/tsconfig.app.json"
   },
   "monorepo": true,
   "root": "apps/text-speech",
+  "entryFile": "text-speech/src/main.js",
   "projects": {
     "text-speech": {
       "type": "application",
@@ -35,15 +36,6 @@
       "sourceRoot": "apps/book-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/book-service/tsconfig.app.json"
-      }
-    },
-    "tts-service": {
-      "type": "application",
-      "root": "apps/tts-service",
-      "entryFile": "main",
-      "sourceRoot": "apps/tts-service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/tts-service/tsconfig.app.json"
       }
     },
     "file-storage-service": {

@@ -3,7 +3,9 @@ import { FileStorageServiceService } from './file-storage-service.service';
 
 @Controller()
 export class FileStorageServiceController {
-  constructor(private readonly fileStorageServiceService: FileStorageServiceService) {}
+  constructor(
+    private readonly fileStorageServiceService: FileStorageServiceService,
+  ) {}
 
   @Get()
   getHello(): string {
