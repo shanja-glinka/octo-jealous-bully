@@ -37,3 +37,5 @@ lerna-debug.log*
 .env
 !docker/.env
 .venv
+/apps/tts-service/*.pt
+/apps/tts-service/*.zip
